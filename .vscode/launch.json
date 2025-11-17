@@ -3,9 +3,11 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Application",
+            "name": "Launch Lesson-03 Application",
             "request": "launch",
-            "mainClass": "main.java.com.springcourse.threading.lifecycle.Application"
+            "mainClass": "com.springcourse.threading.sharedstate.Application",
+            "projectName": "lesson-03-shared-state",
+            "vmArgs": "-ea"
         },
         {
             "type": "java",

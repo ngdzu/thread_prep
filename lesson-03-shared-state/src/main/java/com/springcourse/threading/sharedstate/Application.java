@@ -14,8 +14,8 @@ public final class Application {
         controller.runUnsafeScenario();
         controller.runSynchronizedScenario();
 
-        InventoryLedger ledger = InventoryLedger.createWithSku("sku-100", 120);
-        InventoryLoadTest loadTest = new InventoryLoadTest(ledger, 4, 20);
+        InventoryLedger ledger = InventoryLedger.createWithSku("sku-100", 2000);
+        InventoryLoadTest loadTest = new InventoryLoadTest(ledger, 8, 100);
         loadTest.execute();
     }
 }

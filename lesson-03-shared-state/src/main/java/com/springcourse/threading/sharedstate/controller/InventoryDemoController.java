@@ -10,9 +10,9 @@ import java.util.List;
 public final class InventoryDemoController {
 
     private static final String SKU = "sku-100";
-    private static final int INITIAL_QUANTITY = 120;
-    private static final int TERMINALS = 4;
-    private static final int SALES_PER_TERMINAL = 20;
+    private static final int INITIAL_QUANTITY = 2000;
+    private static final int TERMINALS = 8;
+    private static final int SALES_PER_TERMINAL = 100;
 
     public void runUnsafeScenario() throws InterruptedException {
         InventoryLedger ledger = InventoryLedger.createWithSku(SKU, INITIAL_QUANTITY);
