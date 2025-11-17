@@ -1,0 +1,17 @@
+# Build outputs
+target/
+**/target/
+
+# IDE configuration
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# OS noise
+.DS_Store
+
+# Ignore learner practice workspaces
+practice/
+**/practice/

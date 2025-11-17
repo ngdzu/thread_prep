@@ -1,0 +1,8 @@
+# Lesson 02 Quiz Answers – Thread Lifecycle Management
+
+1. **`NEW`.** Threads start life in the `NEW` state after construction. They have not been scheduled and have no native resources yet, so you cannot query most lifecycle information until `start` transitions them.
+2. **C.** `TIMED_WAITING` indicates the thread is voluntarily paused with a timeout (for example, via `sleep`, `wait(timeout)`, or `join(timeout)`) and will re-enter the runnable pool once the timer expires or it is interrupted.
+3. **To avoid indefinite blocking and detect hung exports.** The controller uses `join(timeout)` so the main thread regains control if the worker stalls. When the timeout elapses, it logs a warning and calls `interrupt` to request a graceful shutdown.
+4. **The interrupt triggers an `InterruptedException`.** When the controller interrupts the worker, the thread wakes from `sleep`, the exception is thrown, and the worker’s catch block restores the interrupt status before logging that cancellation has been requested. The worker then breaks out of its loop so the thread can terminate cleanly.
+5. **`IllegalThreadStateException`.** A thread may only transition from `NEW` to `TERMINATED` once. Reusing a terminated thread would violate lifecycle guarantees, so the JVM enforces the single-use rule by throwing this exception.
+6. **Sampling delay and scheduler timing.** First, thread state snapshots are instantaneous; if the worker transitions back to `RUNNABLE` between sleep intervals, the reporter may capture it there. Second, the OS may wake the worker early (e.g., due to interrupt), briefly making it `RUNNABLE` before it goes back to sleep.
