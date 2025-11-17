@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Lesson-04 Application",
+            "request": "launch",
+            "mainClass": "com.springcourse.threading.waitnotify.Application",
+            "projectName": "lesson-04-wait-notify"
+        },
+        {
+            "type": "java",
             "name": "Launch Lesson-03 Application",
             "request": "launch",
             "mainClass": "com.springcourse.threading.sharedstate.Application",

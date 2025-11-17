@@ -15,9 +15,14 @@ public final class PickRequestQueue {
     }
 
     public synchronized void enqueue(PickRequest request) throws InterruptedException {
-        while (buffer.size() >= capacity) {
-            System.out.printf("[%s] waiting to enqueue (queue full)%n", Thread.currentThread().getName());
-            wait();
+        try {
+            while (buffer.size() >= capacity) {
+                System.out.printf("[%s] waiting to enqueue (queue full)%n", Thread.currentThread().getName());
+                wait();
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw e;
         }
         buffer.addLast(request);
         System.out.printf("[%s] enqueued %s%n", Thread.currentThread().getName(), request.orderId());
@@ -25,9 +30,14 @@ public final class PickRequestQueue {
     }
 
     public synchronized PickRequest dequeue() throws InterruptedException {
-        while (buffer.isEmpty()) {
-            System.out.printf("[%s] waiting to dequeue (queue empty)%n", Thread.currentThread().getName());
-            wait();
+        try {
+            while (buffer.isEmpty()) {
+                System.out.printf("[%s] waiting to dequeue (queue empty)%n", Thread.currentThread().getName());
+                wait();
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw e;
         }
         PickRequest request = buffer.removeFirst();
         System.out.printf("[%s] dequeued %s%n", Thread.currentThread().getName(), request.orderId());
