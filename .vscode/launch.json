@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Application",
+            "request": "launch",
+            "mainClass": "main.java.com.springcourse.threading.lifecycle.Application"
+        },
+        {
+            "type": "java",
+            "name": "Launch Lesson-02 Application",
+            "request": "launch",
+            "mainClass": "com.springcourse.threading.lifecycle.Application",
+            "projectName": "lesson-02-thread-lifecycle",
+            "classPaths": [
+                "${workspaceFolder}/lesson-02-thread-lifecycle/target/classes"
+            ]
+        }
+    ]
+}
