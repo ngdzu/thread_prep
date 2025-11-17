@@ -1,6 +1,4 @@
-package com.springcourse.threading.basics.controller;
-
-import com.springcourse.threading.basics.repository.NotificationQueue;
+package com.springcourse.threading.basics;
 
 import java.time.Duration;
 

@@ -29,7 +29,7 @@ mvn clean compile
 mvn exec:java -Dexec.mainClass="com.springcourse.threading.basics.Application"
 ```
 
-The application starts a dedicated worker thread that delivers queued notifications while the main thread reports progress.
+The application starts a dedicated worker thread that delivers queued notifications while the main thread reports progress. All lesson classes live in the single package `com.springcourse.threading.basics` to keep the structure focused on threading concepts rather than layering.
 
 ## Practice Exercises
 Starter code lives in `practice/` with TODOs and failing tests to guide your work.

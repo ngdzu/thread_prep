@@ -1,6 +1,4 @@
-package com.springcourse.threading.basics.repository;
-
-import com.springcourse.threading.basics.domain.NotificationMessage;
+package com.springcourse.threading.basics;
 
 import java.util.Collection;
 import java.util.Deque;

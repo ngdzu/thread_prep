@@ -1,7 +1,4 @@
-package com.springcourse.threading.basics.controller;
-
-import com.springcourse.threading.basics.repository.NotificationQueue;
-import com.springcourse.threading.basics.service.NotificationDispatcher;
+package com.springcourse.threading.basics;
 
 public final class NotificationController {
 
