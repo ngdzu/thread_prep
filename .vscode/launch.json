@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Lesson-06 Application",
+            "request": "launch",
+            "mainClass": "com.springcourse.threading.concurrent.Application",
+            "projectName": "lesson-06-concurrent-collections"
+        },
+        {
+            "type": "java",
             "name": "Launch Lesson-05 Application",
             "request": "launch",
             "mainClass": "com.springcourse.threading.executors.Application",

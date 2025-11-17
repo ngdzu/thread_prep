@@ -4,7 +4,6 @@ import com.springcourse.threading.concurrent.domain.CampaignMetrics;
 import com.springcourse.threading.concurrent.service.DataFeed;
 import com.springcourse.threading.concurrent.service.MetricsAggregator;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
